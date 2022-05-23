@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+</head>
+
+<body>
+  <section id="breadcrumbs" class="breadcrumbs">
+    <div class="container">
+      <h2 class="text-center"> Edit Your Account Details<span> ✏️ </span></h2>
+    </div>
+  </section><!-- End Breadcrumbs -->
+
+  <section class="inner-page">
+    <div class="container h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-lg-12 col-xl-11">
+          <div class="card text-black" style="border-radius: 25px;">
+            <div class="card-body p-md-5">
+              <div class="row justify-content-center">
+                <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
+                  <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 ml-4">Edit <%= resource_name.to_s.humanize %></p>
+                  <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+                    <%= render "devise/shared/error_messages", resource: resource %>
+                   
+                   <%# FirstName fied %>
+                    <div class="d-flex flex-row align-items-center mb-4">
+                      <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
+                      <div class="form-outline flex-fill mb-0">
+                        <%= f.label :first_name ,class: "form-label" %><br />
+                        <%= f.text_field :first_name , autofocus: true, autocomplete: "First Name", class:"form-control"%>
+                      </div>
+                    </div>
+
+
+                    <%# LastName fied %>
+                    <div class="d-flex flex-row align-items-center mb-4">
+                      <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
+                      <div class="form-outline flex-fill mb-0">
+                         <%= f.label :last_name, class: "form-label" %><br />
+                        <%= f.text_field :last_name , autofocus: true, autocomplete: "Last Name", class:"form-control"%>
+                      </div>
+                    </div>
+
+                    <%# Username fied %>
+                    <div class="d-flex flex-row align-items-center mb-4">
+                      <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
+                      <div class="form-outline flex-fill mb-0">
+                         <%= f.label :username, class: "form-label" %><br />
+                        <%= f.text_field :username, autofocus: true, autocomplete: "User Name", class:"form-control"%>
+                      </div>
+                    </div>
+
+                    <%# Age fied %>
+                    <div class="d-flex flex-row align-items-center mb-4">
+                      <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
+                      <div class="form-outline flex-fill mb-0">
+                         <%= f.label :age, class: "form-label" %><br />
+                        <%= f.number_field :age,in: 0..115, step: 1, autofocus: true, autocomplete: "Age", class:"form-control"%>
+                      </div>
+                    </div>
+
+
+                    <%# Email confirmation if pending %>
+                      <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+                        <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+                      <% end %>
+
+                    <%# Password Field %>
+
+                    <div class="d-flex flex-row align-items-center mb-4">
+                      <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
+                      <div class="form-outline flex-fill mb-0">
+                        <%= f.label :password, class:"form-label" %><i> (leave blank if you don't want to change it)</i><br/>
+                        <% if @minimum_password_length %>
+                          <label class="form-label">(<%= @minimum_password_length %> characters minimum)</label>
+                        <% end %>
+                        <br/>
+                        <%= f.password_field :password, autocomplete: "new-password", class:"form-control" %>
+                      </div>
+                    </div>
+
+                    <%# Confirm your password %>
+                    <div class="d-flex flex-row align-items-center mb-4">
+                      <i class="fas fa-key fa-lg me-3 fa-fw"></i>
+                      <div class="form-outline flex-fill mb-0">
+                        <%= f.label :password_confirmation, class:"form-label" %><br />
+                        <%= f.password_field :password_confirmation, autocomplete: "confirm-password", class:"form-control"%>
+                      </div>
+                    </div>
+
+                    <%# current password %>
+                      <div class="d-flex flex-row align-items-center mb-4">
+                      <i class="fas fa-key fa-lg me-3 fa-fw"></i>
+                      <div class="form-outline flex-fill mb-0">
+                        <%= f.label :current_password, class:"form-label" %><i> (Enter the Current Password to confirm)</i><br/>
+                        <%= f.password_field :current_password, autocomplete: "current-password", class:"form-control"%>
+                      </div>
+                    </div>
+
+                    <%# Sumbit button %>
+                    <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
+                      <%= f.submit "Update" ,class:"btn btn-primary btn-lg m-5"%>
+                    </div>
+                  <% end %>
+
+                  <div class="divider d-flex align-items-center my-4">
+                    <p class="text-center fw-bold mx-3 mb-0 text-muted">OR</p>
+                  </div>
+                  
+                  <h3 class="text-center h3 fw-bold mb-5 mx-1 mx-md-4 mt-4">Delete Your Account 😔</h3>
+                    <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
+                      <%= button_to "Delete my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class:"btn btn-primary btn-lg" %>
+                    </div>
+                </div>
+                <div class="col-md-10 col-lg-6 col-xl-7 f-flex align-items-center order-5 order-lg-2">
+                   <img src="https://i.pinimg.com/originals/d8/e8/21/d8e8216387e7570e24afea0a39282cbd.png" class="img-fluid" alt="Sample image">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

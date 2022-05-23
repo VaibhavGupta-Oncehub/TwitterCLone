@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <title>Twitter</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <%= stylesheet_link_tag    'custom', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'custom', 'data-turbolinks-track': 'reload' %>
+   
+  </head>
+
+  <body>
+    <!-- ======= Hero Section ======= -->
+    <section id="hero" class="d-flex align-items-center">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6 d-flex flex-column justify-content-center pt-4 pt-lg-0 order-2 order-lg-1" data-aos="fade-up" data-aos-delay="200">
+            <h1>Twitter- Connect with millions of people.</h1>
+            <h2>Sign up to join now.</h2>
+            <div class="d-flex justify-content-center justify-content-lg-start">
+              <%= link_to "Get Started", new_user_registration_path,class: "btn-get-started scrollto"%>
+            </div>
+          </div>
+          <div class="col-lg-6 order-1 order-lg-2 hero-img">
+           <img src="https://img.icons8.com/cute-clipart/512/000000/twitter.png"/>
+          </div>
+        </div>
+      </div>
+
+    </section>
+    <!-- End Hero -->
+   
+  </body>
+
+</html>

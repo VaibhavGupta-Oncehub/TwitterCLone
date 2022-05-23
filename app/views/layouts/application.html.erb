@@ -1,24 +1,42 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>TwitterClone</title>
+    <title>Twitter</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= stylesheet_link_tag    'custom', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <%= stylesheet_link_tag    'custom', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'custom', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-  
-    <% if notice %>
-      <p class="alert alert-success alert-dismissible fade show" role="alert"><%= notice %></p>
-    <% end %>
-    <% if alert %>
-      <p class="alert alert-danger alert-dismissible fade show" role="alert"><%= alert %></p>
-    <% end %>
-    <%= yield %>
+    
+    <div>
+      <%= render 'layouts/header' %>
+
+      <div id="devise-flash" class="flash">
+        <% if notice %> 
+          <div class="alert alert-success alert-dismissible fade show " role="alert">
+            <p><%= notice %></p>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+          </div>
+        <% end %>
+        <% if alert %> 
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            <p><%= alert %></p>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+          </div>
+        <% end %>
+      </div>
+      
+      <div id=main>
+        <%= yield %>
+      </div>
+
+    </div>
+
   </body>
 </html>

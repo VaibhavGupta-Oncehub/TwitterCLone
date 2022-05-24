@@ -14,7 +14,7 @@
             <ul class="text-center">
               <strong class="text-uppercase font-italic font-weight-bold">User: <%= current_user.username%></strong>
               <hr/>
-              <li><a href="#">My Profile</a></li>
+              <li><%= link_to "My Profile",user_path(current_user),class:"text-success"%></li>
               <%= link_to "Edit Profile",edit_user_registration_path,class: "text-warning"%>
               <%= link_to "Delete Profile", registration_path(current_user), data: { confirm: "Are you sure you want to delete this profile?" }, method: :delete, class:"text-danger" %></li>
               <li><a href="#">My Friends</a></li>

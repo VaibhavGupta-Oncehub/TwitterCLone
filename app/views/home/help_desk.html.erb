@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  </head>
+  <body>
+    <main id="main">
+      <!-- ======= About Us Section ======= -->
+      <section id="about" class="about">
+        <div class="container">
+          <div class="section-title">
+            <h2>Welcome to Account Help Desk</h2>
+          </div>
+          <div class="main-body">
+            <div class="list-group m-2">
+              <a href="<%= new_user_confirmation_path %>" class="list-group-item list-group-item-action flex-column align-items-start mt-4  mb-4">
+                <div class="d-flex w-100 justify-content-between">
+                  <h5 class="mb-1">Receive confirmation instructions<span> 🔂 </span></h5>
+                </div>
+                <p class="mb-1">If you didn't receive an email to confirm your account, please follow it to continue. </p>
+              </a>
+              <a href="<%= new_user_password_path %>" class="list-group-item list-group-item-action flex-column align-items-start mt-4 mb-4">
+                <div class="d-flex w-100 justify-content-between">
+                  <h5 class="mb-1">Account Password Recovery<span> 🔑 </span></h5>
+                </div>
+                <p class="mb-1">If you forget your password, please follow it to create a new password.</p>
+              </a>
+              <a href="<%= new_user_unlock_path %>" class="list-group-item list-group-item-action flex-column align-items-start mt-4 mb-4">
+                <div class="d-flex w-100 justify-content-between">
+                  <h5 class="mb-1">Resend Unlock Instructions<span> 🔐 </span></h5>
+                </div>
+                <p class="mb-1">If you have locked your account, please follow it to unlock it.</p>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+    </section>
+    <!-- End About Us Section -->
+  </main>
+  <!-- End #main -->
+</body>
+</html>

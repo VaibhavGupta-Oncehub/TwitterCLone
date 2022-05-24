@@ -9,6 +9,7 @@
       <ul>
         <li><%= link_to "Home", root_path, class: "nav-link scrollto"  %></li>
         <% if user_signed_in? %>
+          <li><%= link_to "Account Help Desk", helpdesk_path, class: "nav-link scrollto"  %></li>
           <li class="dropdown"><%= link_to "Menu",root_path, class:"bi bi-chevron-down ml-2" %>
             <ul class="text-center">
               <div id="new_profile" class="f-flex flex-row text-center mb-4">

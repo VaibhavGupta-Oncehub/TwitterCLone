@@ -18,7 +18,19 @@ a:hover {
 
 }
 
+.btn, 
+.btn:hover, 
+.btn:active, 
+.btn:focus, 
+.btn:visited,
+.btn:default{
+  color: #FFF;
+}
 
+.list-group-item{
+  border: 2px solid black !important ;
+  
+}
 
 h1,
 h2,

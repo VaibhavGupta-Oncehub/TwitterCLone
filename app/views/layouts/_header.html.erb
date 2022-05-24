@@ -21,8 +21,9 @@
               <li><%= link_to "My Profile",user_path(current_user),class:"text-success"%></li>
               <li><%= link_to "Edit Profile",edit_user_registration_path,class: "text-warning"%></li>
               <li> <%= link_to "Delete Profile", registration_path(current_user), data: { confirm: "Are you sure you want to delete this profile?" }, method: :delete, class:"text-danger" %></li>
-              <li><%= link_to "My Tweets",tweets_path,class:"text-dark"%></li>
-              <li><a href="#">My Followers</a></li>
+              <li><%= link_to "My Tweets",tweets_path,class:"text-secondary"%></li>
+              <hr/>
+              <li><%= link_to "Add Tweeterites",users_path,class:"text-info"%></li>
             </ul>
           </li>
         <% end%>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  </head>
+  <body>
+    <main id="main">
+      <!-- ======= About Us Section ======= -->
+      <section id="about" class="about">
+        <div class="container">
+          <div class="section-title">
+            <h2>My Tweet</h2>
+          </div>
+          <div class="main-body">
+            <div class="card text-center">
+              <div class="card-header">
+                <%= @tweet.title.to_s.humanize %>
+              </div>
+              <div class="card-body">
+                <h5 class="card-title"><%= @tweet.description.to_s.humanize %></h5>
+                <% if @tweet.user_id === current_user.id %>
+                  <div class="row m-3">
+                    <div class="col-sm-12">
+                      <%= link_to "Edit Tweet",edit_tweet_path(@tweet),class: "btn btn-warning"%>
+                      <%= link_to "Delete Tweet", tweet_path(@tweet), data: { confirm: "Are you sure you want to delete this Tweet?" }, method: :delete, class:"btn btn-danger" %></li>
+                  </div>
+                </div>
+              <%end%>
+            </div>
+            <div class="card-footer text-muted">
+              Tweeted on <%= l @tweet.created_at.to_date, format: :long %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div>
+</section>
+<!-- End About Us Section -->
+</main>
+<!-- End #main -->
+</body>
+</html>

@@ -6,5 +6,8 @@
   "eslint.enable": false,
   "eslint.codeAction.showDocumentation": {
     "enable": false
-  }
+  },
+  "files.associations": {
+  "*.html.erb": "erb"
+}
 }

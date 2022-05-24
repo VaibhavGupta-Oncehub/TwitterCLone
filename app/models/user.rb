@@ -19,4 +19,6 @@ class User < ApplicationRecord
                                         message: 'only %{types} are allowed' }, file_size: { less_than: 10.megabytes,
                                 message: 'image should be less than %{count}' }
 
+ has_many :tweets, dependent: :destroy;
+
 end

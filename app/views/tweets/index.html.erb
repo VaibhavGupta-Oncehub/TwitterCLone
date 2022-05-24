@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  </head>
+  <body>
+    <main id="main">
+      <!-- ======= About Us Section ======= -->
+      <section id="about" class="about">
+        <div class="container">
+          <div class="section-title">
+            <h2>My Tweets</h2>
+            <%= link_to "Create a new Tweet",new_tweet_path, class: "btn btn-success text-center m-5"%>
+          </div>
+          <div class="main-body">
+            <div class="list-group">
+              <% @tweets.each do |tweet|%>
+                <a href="<%= tweet_path(tweet) %>"class="list-group-item list-group-item-action flex-column align-items-start m-2" style="border: 2px solid">
+                  <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mb-1">  <%= tweet.title.to_s.humanize %></h5>
+                    <small>Tweeted on <%= l tweet.created_at.to_date, format: :long %></small>
+                  </div>
+                  <p class="mb-1"> <%= tweet.description.to_s.humanize%></p>
+                </a>
+              <%end%>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div>
+  </section>
+  <!-- End About Us Section -->
+</main>
+<!-- End #main -->
+</body>
+</html>

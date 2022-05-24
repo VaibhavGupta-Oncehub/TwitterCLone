@@ -2,34 +2,30 @@
 <header id="header" class="fixed-top">
   <div class="container d-flex align-items-center">
     <a class="navbar-brand" href= "<%= root_path %>">
-        <img src="https://img.icons8.com/doodle/1600/000000/twitter-circled.png" width="40" height="40" class="d-inline-block align-top">
-      </a>
+      <img src="https://img.icons8.com/doodle/1600/000000/twitter-circled.png" width="40" height="40" class="d-inline-block align-top">
+    </a>
     <h1 class="logo me-auto"><%= link_to "Twitter", root_path%></h1>
-
     <nav id="navbar" class="navbar">
       <ul>
         <li><%= link_to "Home", root_path, class: "nav-link scrollto"  %></li>
         <% if user_signed_in? %>
           <li class="dropdown"><%= link_to "Menu",root_path, class:"bi bi-chevron-down ml-2" %>
             <ul class="text-center">
-            <div id="new_profile" class="f-flex flex-row text-center mb-4">
-              <% if @user.image.attached? %>
-                  <%= image_tag(@user.image, size:50, class:"rounded-circle")%>
-              <%end%>
-            </div>
+              <div id="new_profile" class="f-flex flex-row text-center mb-4">
+                <% if current_user.image != nil && current_user.image.attached? %>
+                  <%= image_tag(current_user.image, size:50, class:"rounded-circle")%>
+                <%end%>
+              </div>
               <strong class="text-uppercase font-italic font-weight-bold">User: <%= current_user.username%></strong>
               <hr/>
               <li><%= link_to "My Profile",user_path(current_user),class:"text-success"%></li>
-              <%= link_to "Edit Profile",edit_user_registration_path,class: "text-warning"%>
-              <%= link_to "Delete Profile", registration_path(current_user), data: { confirm: "Are you sure you want to delete this profile?" }, method: :delete, class:"text-danger" %></li>
-              <li><a href="#">My Friends</a></li>
-              <li><a href="#">My Friends Requests</a></li>
-              <li><a href="#">Add Friends</a></li>
-
+              <li><%= link_to "Edit Profile",edit_user_registration_path,class: "text-warning"%></li>
+              <li> <%= link_to "Delete Profile", registration_path(current_user), data: { confirm: "Are you sure you want to delete this profile?" }, method: :delete, class:"text-danger" %></li>
+              <li><%= link_to "My Tweets",tweets_path,class:"text-dark"%></li>
+              <li><a href="#">My Followers</a></li>
             </ul>
           </li>
         <% end%>
-
         <% if user_signed_in? %>
           <%= link_to "Logout",destroy_user_session_path, class: "getstarted", method: :delete  %>
         <% else %>
@@ -38,7 +34,6 @@
       </ul>
       <i class="bi bi-list mobile-nav-toggle"></i>
     </nav><!-- .navbar -->
-
   </div>
 </header>
 <!-- End Header -->

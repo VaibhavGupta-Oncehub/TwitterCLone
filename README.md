@@ -6,7 +6,9 @@ This project was created to complete the Oncehub's ruby on rails certification e
 
 * Home Page.
 
-* User functionality
+* User functionality with complete crud operations.
+
+* Account Help desk for account confirmation, unlock and password recovery.
 
 * Followers functionality which only includes follow/unfollow any user on the platform, views his/her tweets only when the user follows you.
 

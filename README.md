@@ -1,24 +1,31 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This project was created to complete the Oncehub's ruby on rails certification exams. The porject was designed strictly according to the user requirement.
 
-Things you may want to cover:
+## Overview of the project:
 
-* Ruby version
+* Home Page.
 
-* System dependencies
+* User functionality
 
-* Configuration
+* Followers functionality which only includes follow/unfollow any user on the platform, views his/her tweets only when the user follows you.
 
-* Database creation
+* Tweets functionality with all crud operations and validations.
 
-* Database initialization
+* Database Models include User,Tweet, Followers <= Users.
 
-* How to run the test suite
+## How to run the project
 
-* Services (job queues, cache servers, search engines, etc.)
+* Clone the above repo.
 
-* Deployment instructions
+* In the parent directory, run "bundle install"
 
-* ...
+* In the parent directory, run "rails active_storage:install"
+
+* In the parent directory, run "rails db:migrate"
+
+
+# Project Requirement
+
+![image](https://user-images.githubusercontent.com/98082102/170067828-178afe3a-9061-4897-9a2e-eb5b36229d22.png)
+

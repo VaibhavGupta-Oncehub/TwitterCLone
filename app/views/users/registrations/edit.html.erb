@@ -25,6 +25,24 @@
                   <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 ml-4">Edit <%= resource_name.to_s.humanize %></p>
                   <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
                     <%= render "devise/shared/error_messages", resource: resource %>
+
+                    <%# current profile image %>
+                    <div id="new_profile" class="f-flex flex-row text-center mb-4">
+                      <% if resource.image.attached? %>
+                        <%= image_tag(resource.image, size:200, class:"rounded-circle")%>
+                      <%end%>
+                    </div>
+                    
+
+                    <%# upload a new file %>
+                    <div id="new_profile" class="d-flex flex-row align-items-center mb-4">
+                      <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
+                      <div class="form-outline flex-fill mb-0">
+                         <%= f.label :image, class: "form-label" %><br />
+                         <%= f.file_field :image ,class:"form-control",accept: 'image/png,image/gif,image/jpeg'%>
+                      </div>
+                    </div>
+                   
                    
                    <%# FirstName fied %>
                     <div class="d-flex flex-row align-items-center mb-4">

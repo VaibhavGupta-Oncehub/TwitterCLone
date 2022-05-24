@@ -1,6 +1,10 @@
 {
-  "eslint.useESLintClass": true,
+  "eslint.useESLintClass": false,
   "html.format.indentHandlebars": true,
   "html.format.indentInnerHtml": true,
-  "html.format.templating": true
+  "html.format.templating": true,
+  "eslint.enable": false,
+  "eslint.codeAction.showDocumentation": {
+    "enable": false
+  }
 }

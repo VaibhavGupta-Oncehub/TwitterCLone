@@ -12,6 +12,11 @@
         <% if user_signed_in? %>
           <li class="dropdown"><%= link_to "Menu",root_path, class:"bi bi-chevron-down ml-2" %>
             <ul class="text-center">
+            <div id="new_profile" class="f-flex flex-row text-center mb-4">
+              <% if @user.image.attached? %>
+                  <%= image_tag(@user.image, size:50, class:"rounded-circle")%>
+              <%end%>
+            </div>
               <strong class="text-uppercase font-italic font-weight-bold">User: <%= current_user.username%></strong>
               <hr/>
               <li><%= link_to "My Profile",user_path(current_user),class:"text-success"%></li>

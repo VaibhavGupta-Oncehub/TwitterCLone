@@ -41,9 +41,12 @@ gem 'popper_js', '~> 2.9.3'
 #Authentication with Devise
 gem 'devise'
 
+gem 'file_validators'
+
+
 
 # Use ActiveStorage variant
-# gem 'mini_magick', '~> 4.8'
+gem 'mini_magick', '~> 4.8'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
